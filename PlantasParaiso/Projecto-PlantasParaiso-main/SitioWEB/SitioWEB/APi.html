@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumo de API REST</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .data-item {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .data-item h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #333;
+    }
+    .data-item p {
+      margin: 0;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Listado de Plagas y Enfermedades</h1>
+  <div id="data-container">
+    <p>Cargando datos...</p>
+  </div>
+  <script>
+    // URL de la API REST
+    const apiUrl = 'https://perenual.com/api/pest-disease-list?key=sk-afZP678905ff50ccc8248';
+
+    // Contenedor donde se mostrarán los datos
+    const dataContainer = document.getElementById('data-container');
+
+    // Función para obtener datos de la API
+    async function fetchData() {
+      try {
+        // Realizar solicitud a la API
+        const response = await fetch(apiUrl);
+
+        // Verificar si la respuesta es exitosa
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+
+        // Convertir los datos a JSON
+        const data = await response.json();
+
+        // Mostrar los datos en el DOM
+        displayData(data.data); // La API parece devolver un objeto con una clave "data"
+      } catch (error) {
+        console.error('Hubo un problema al obtener los datos:', error);
+        dataContainer.innerHTML = `<p>Error al obtener los datos: ${error.message}</p>`;
+      }
+    }
+
+    // Función para mostrar los datos en la página
+    function displayData(data) {
+      if (!data || data.length === 0) {
+        dataContainer.innerHTML = '<p>No se encontraron datos.</p>';
+        return;
+      }
+
+      // Iterar sobre los datos y construir HTML dinámico
+      const html = data.map(item => `
+        <div class="data-item">
+          <h2>${item.common_name || 'Sin nombre común'}</h2>
+          <p>${item.scientific_name || 'Nombre científico no disponible'}</p>
+        </div>
+      `).join('');
+      dataContainer.innerHTML = html;
+    }
+
+    // Llamar a la función para obtener datos al cargar la página
+    fetchData();
+  </script>
+</body>
+</html>

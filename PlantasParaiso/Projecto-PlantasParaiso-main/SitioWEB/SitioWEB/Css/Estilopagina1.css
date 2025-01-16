@@ -1,0 +1,138 @@
+/* Estilo para el cuerpo y fuente general */
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #c5ed96;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+#titulo-inicio {
+    text-decoration: none; /* Elimina el subrayado */
+    color: #4CAF50; /* Cambia el color del texto (puedes elegir otro color) */
+    font-size: 24px; /* Ajusta el tamaño de la fuente según lo desees */
+    font-weight: bold; /* Opcional: hace que el texto sea más grueso */
+}
+
+/* Opcional: Cambia el color al pasar el mouse sobre el enlace */
+#titulo-inicio:hover {
+    color: #2E7D32; /* Color al pasar el mouse (puedes elegir otro) */
+}
+
+/* Encabezado principal */
+h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin-top: 20px;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el menú de navegación */
+.nav {
+    background-color: #4CAF50;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #d4edda;
+}
+
+.nav-link.disabled {
+    color: #b5b5b5;
+    pointer-events: none;
+}
+
+/* Estilo del carrusel */
+.carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+/* Estilo para los párrafos */
+p {
+    text-align: center;
+    margin: 15px auto;
+    width: 80%;
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.video-container {
+    display: flex;
+    flex-direction: column; /* Alinea verticalmente los elementos en la columna */
+    align-items: center; /* Centra horizontalmente */
+}
+iframe {
+    width: 100%; /* Ancho completo del contenedor */
+    max-width: 800px; /* Ancho máximo del video */
+    height: 450px; /* Altura fija del video */
+}
+/* Estilo del pie de página */
+.footer {
+    background-color: #2d2c2c;
+    color: #fff;
+    text-align: center;
+
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.footer h4 {
+    color: #4CAF50;
+}
+
+.footer a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+
+}
+
+.footer a:hover {
+    color: #81c784;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    p {
+        width: 90%;
+    }
+
+    .carousel-inner img {
+        height: 250px;
+    }
+}
+#calendar {
+            max-width: 900px;
+            margin: 40px auto;
+        }
