@@ -1,0 +1,10 @@
+REM ProyWeb_BastiD-az_Quevedo_Oviedo_001D
+echo off
+echo pip install python
+echo pip install pillow
+echo pip install django
+echo py manage.py runserver
+
+REMCredenciales admin
+REMuser: d
+REMpass: 123
